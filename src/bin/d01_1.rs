@@ -9,7 +9,7 @@ fn main() {
 }
 
 fn solve(input: &str) -> u32 {
-    let numbers = aoc2021::as_numbers::<u32>(input);
+    let numbers = aoc2021::as_vec::<u32>(input);
     increases(numbers)
 }
 

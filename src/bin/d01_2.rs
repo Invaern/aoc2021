@@ -9,7 +9,7 @@ fn main() {
 }
 
 fn solve(input: &str) -> u32 {
-    let numbers = aoc2021::as_numbers(input);
+    let numbers = aoc2021::as_vec(input);
     let windows = window_sums(numbers);
     increases(windows)
 }

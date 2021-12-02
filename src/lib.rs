@@ -1,7 +1,7 @@
 use std::fmt::Debug;
 use std::str::FromStr;
 
-pub fn as_numbers<T>(input: &str) -> Vec<T>
+pub fn as_vec<T>(input: &str) -> Vec<T>
 where T: std::str::FromStr, <T as FromStr>::Err: Debug {
     input
         .lines()
