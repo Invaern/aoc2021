@@ -1,14 +1,13 @@
-use aoc2021;
-use std::fs;
+use aoc2021::{as_vec, get_input};
 
 fn main() {
-    let input = fs::read_to_string("inputs/01.txt").expect("Failed to load input");
+    let input = get_input("inputs/01.txt");
     let solution = solve(&input);
     println!("{}", solution)
 }
 
 fn solve(input: &str) -> u32 {
-    let numbers = aoc2021::as_vec::<u32>(input);
+    let numbers = as_vec::<u32>(input);
     increases(numbers)
 }
 

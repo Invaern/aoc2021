@@ -1,6 +1,6 @@
 use crate::Command::{Down, Forward, Up};
-use std::fs;
 use std::str::FromStr;
+use aoc2021::{as_vec, get_input};
 
 #[derive(Debug, Eq, PartialEq)]
 enum Command {
@@ -46,13 +46,13 @@ impl Submarine {
 }
 
 fn main() {
-    let input = fs::read_to_string("inputs/02.txt").expect("Failed to load input");
+    let input = get_input("inputs/02.txt");
     let solution = solve(&input);
     println!("{}", solution)
 }
 
 fn solve(input: &str) -> u32 {
-    let commands = aoc2021::as_vec(input);
+    let commands = as_vec(input);
     let submarine = run_commands(commands);
     submarine.depth * submarine.horizontal
 }
