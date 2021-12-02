@@ -1,11 +1,10 @@
-use std::fs;
 use aoc2021;
+use std::fs;
 
 fn main() {
     let input = fs::read_to_string("inputs/01.txt").expect("Failed to load input");
     let solution = solve(&input);
     println!("{}", solution)
-
 }
 
 fn solve(input: &str) -> u32 {
@@ -13,18 +12,15 @@ fn solve(input: &str) -> u32 {
     increases(numbers)
 }
 
-
-
 fn increases(numbers: Vec<u32>) -> u32 {
-    let (incs, _) = numbers.into_iter()
-        .fold((0u32, u32::MAX),
-        |(inc, last),  current| {
-            let incs = if current > last { inc + 1} else {inc};
+    let (incs, _) = numbers
+        .into_iter()
+        .fold((0u32, u32::MAX), |(inc, last), current| {
+            let incs = if current > last { inc + 1 } else { inc };
             (incs, current)
         });
-   incs
+    incs
 }
-
 
 #[cfg(test)]
 mod tests {
