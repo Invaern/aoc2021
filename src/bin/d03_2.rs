@@ -120,14 +120,14 @@ fn scrubber_rating(current_bit: usize, binaries: &[BinaryNumber]) -> BinaryNumbe
         return binaries[0].clone();
     }
     let frequencies = get_frequencies(binaries);
-    if let Some(oxygen_bit) = frequencies.scrubber_bit(current_bit) {
+    if let Some(scrubber_bit) = frequencies.scrubber_bit(current_bit) {
         let matching_binaries: Vec<BinaryNumber> = binaries.iter()
-            .filter(|b| b.bit_match(current_bit, oxygen_bit))
+            .filter(|b| b.bit_match(current_bit, scrubber_bit))
             .map(|b| b.clone())
             .collect();
         scrubber_rating(current_bit + 1, &matching_binaries)
     } else {
-        panic!("Unable to find oxygen rating. Remaining binaries: {:?}", binaries)
+        panic!("Unable to find scrubber rating. Remaining binaries: {:?}", binaries)
     }
 }
 
