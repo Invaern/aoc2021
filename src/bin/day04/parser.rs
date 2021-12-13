@@ -22,9 +22,6 @@ fn number(s: &str) -> IResult<&str, u8> {
     p_u8(s)
 }
 
-// fn boards(s: &str) -> IResult<&str, Vec<Board>> {
-//     many0(board)(s)
-// }
 
 fn puzzle_input(s: &str) -> IResult<&str, (Vec<u8>, Vec<Board>)> {
     let (s, _) = multispace0(s)?;
@@ -68,37 +65,6 @@ mod tests {
         let res = board(input);
         assert_eq!(res, Ok((" r", expected)));
     }
-
-    // #[test]
-    // fn test_boards() {
-    //     let input =
-    //         r#"22 13 17 11  0
-    //          8  2 23  4 24
-    //         21  9 14 16  7
-    //          6 10  3 18  5
-    //          1 12 20 15 19
-    //
-    //          3 15  0  2 22
-    //          9 18 13 17  5
-    //         19  8  7 25 23
-    //         20 11 10 24  4
-    //         14 21 16 12  6
-    //
-    //         14 21 17 24  4
-    //         10 16 15  9 19
-    //         18  8 23 26 20
-    //         22 11 13  6  5
-    //          2  0 12  3  7"#;
-    //     let parsed = boards(input);
-    //     match parsed {
-    //         Ok(("", boards)) => assert_eq!(boards.len(), 3),
-    //         Ok((input, _)) => assert_eq!(input, ""),
-    //         Err(e) => {
-    //             dbg!(e);
-    //             assert_eq!(false, true);
-    //         }
-    //     }
-    // }
 
     #[test]
     fn sample_input() {
