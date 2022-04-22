@@ -56,9 +56,9 @@ struct BingoBoard {
 }
 
 #[cfg(test)]
-mod tests {
+mod d04_tests {
     use crate::parser::parse;
-    use crate::part2::{find_board, solve};
+    use crate::part2::{solve};
 
     #[test]
     fn solve_sample() -> Result<(), String> {
